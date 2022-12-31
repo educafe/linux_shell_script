@@ -1,0 +1,4 @@
+educafe ALL=(ALL:ALL)\
+ALL,\
+NOPASSWD: /usr/sbin/useradd, /usr/sbin/userdel, /usr/sbin/chpasswd, /bin/tar
+
