@@ -6,11 +6,13 @@ do
 	sleep 1
 done
 
+echo
 for str in hello world good morning
 do	
 	echo $str
 done
 
+echo
 for str in $@
 do	
 	echo $str

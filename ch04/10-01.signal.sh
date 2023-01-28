@@ -2,7 +2,6 @@
 trap "echo caught signal SIGINT" SIGINT
 trap "echo caught signal SIGQUIT" 3
 trap "echo caught signal SIGTERM" 15
-trap "echo caught signal SIGTSTP" TSTP
 trap "echo caught signal EXIT" EXIT
 
 trap -p SIGINT SIGQUIT SIGTERM EXIT

@@ -3,7 +3,7 @@
 
 read -p "Login : " login
 read -p "Password : " -s password
-
+echo
 if [ $login = educafe ]; then
 	if [ $password = ubuntu ]; then
 		echo "Welcome to Shell Programming"

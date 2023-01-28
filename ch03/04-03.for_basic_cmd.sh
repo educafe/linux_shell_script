@@ -1,27 +1,7 @@
 #!/bin/bash
-# To build list from command execution
 
-#read full file and output word by word
-for line in $(cat file)
+file=/home/educafe/linux_shell_script/ch03/servers.txt
+for server in $(cat $file)
 do
-	echo $line
+	ping -c 2 -i 2 $server
 done
-
-#read full file and output word by word
-for line in $(cat file)
-do
-	echo "$line"
-done
-
-#read full file and output just one line 
-for line in "$(cat file)"
-do
-	echo $line
-done
-
-#read full file and output line by line
-for line in "$(cat file)"
-do
-	echo "$line"
-done 
-	

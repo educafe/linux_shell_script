@@ -7,9 +7,9 @@ if [[ "$int" =~ ^-?[0-9]+$ ]]; then
 		echo "$int is zero."
 	else
 		if [ $int -gt 0 ]; then
-			echo "$int is negative."
-		else
 			echo "$int is positive."
+		else
+			echo "$int is negative."
 		fi
 		if [ $((int % 2)) -eq 0 ]; then
 			echo "$int is even."

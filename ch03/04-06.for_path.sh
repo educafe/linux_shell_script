@@ -7,19 +7,19 @@ for var in $list
 do
 	echo "$var"
 done
-echo ""
-IFS=
 
-A way of printing PATH line by line 
-char=":"
-to=$(awk -F"${char}" '{print NF}' <<< "${list}")
-to=$(echo $list | awk -F"${char}" '{print NF}')
-echo
-for ((i=1; i<=$to; i++))
-do
-	echo $PATH | cut -d ':' -f $i
-	echo $PATH | awk -F: '{print '\$$i'}'
-done
+# IFS=
+
+# A way of printing PATH line by line 
+# char=":"
+# to=$(awk -F"${char}" '{print NF}' <<< "${list}")
+# to=$(echo $list | awk -F"${char}" '{print NF}')
+# echo
+# for ((i=1; i<=$to; i++))
+# do
+	# echo $PATH | cut -d ':' -f $i
+	# echo $PATH | awk -F: '{print '\$$i'}'
+# done
 
 # another way of printing PATH line by line - the simplist way
 # IFS=:

@@ -1,11 +1,10 @@
 #!/bin/bash
 
-function myadd {
-	for var in $@
+function myfunc {
+	for var in $1 $2 $3 $4
 	do
-		rst=$[$rst + $var]
+		echo $var
 	done
-	echo ${rst}
 }
 
-myadd 10 20 30 40 50
+myfunc $1 $3 $2 $4

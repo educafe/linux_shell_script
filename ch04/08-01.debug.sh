@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 echo "This is a demo for shell script debugging"
 pwd
