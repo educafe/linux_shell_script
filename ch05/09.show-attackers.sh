@@ -10,6 +10,7 @@ LOG_FILE="${1}"
 if [[ ! -e "${LOG_FILE}" ]]
 then 
   echo "Cannot open log file: ${LOG_FILE}" >&2
+	echo "Please try with /var/log/auth.log file" >&2
   exit 1
 fi
 
@@ -27,3 +28,7 @@ do
   fi
 done
 exit 0
+
+
+# GeoIP Country Edition: US, United States
+# GeoIP City Edition, Rev 1: US, CA, California, Mountain View, 94043, 37.419201, -122.057404
