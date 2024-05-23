@@ -6,7 +6,14 @@ if [ $# -lt 1 ]; then
 	exit
 fi
 
-find ${1} -type f -name "*" | xargs egrep -l "$2"
+find ${1} -type f -name "*" | xargs egrep "$2" > files.$(date +%y%m%d)
+
+while read file
+do
+	echo "$file"
+done < <(cat files.$(date +%y%m%d))
+
+rm files.$(date +%y%m%d)
 
 << Comment
 example of Usage....

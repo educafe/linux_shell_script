@@ -8,9 +8,3 @@ do
   ((INDEX++))
 done
 
-# while [ "$correct" != "y" ]
-# do
-  # read -p "Enter your name: " name
-  # read -p "Is ${name} correct name (y/n)? " correct
-# done
-

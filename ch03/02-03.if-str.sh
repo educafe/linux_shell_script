@@ -12,7 +12,7 @@ else
 fi
 
 if [[ $str == linu? ]]; then
-#if [[ "$str" =~ "linu" ]]; then
+#if [[ "$str" =~ linu ]]; then
 #if [[ $str =~\.sh ]]; then
 	echo "True"
 else

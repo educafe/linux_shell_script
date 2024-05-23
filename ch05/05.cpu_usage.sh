@@ -2,7 +2,14 @@
 #Cpu usage monitoring
 echo "Please wait ....."
 
-top -b -n5 | fgrep "Cpu(s)" | awk -F',' '{ print $1 $2 $3 $4 }' 
+top -b -n5 | fgrep "Cpu(s)" | awk -F',' '{ print $1 $2 $3 $4 }'
+# top -b -n5 | fgrep "Cpu(s)" | awk -F',' '{ print $1 $2 $3 $4 }' | tee a.txt
+
+top -b -n5 | fgrep "Cpu(s)" | awk -F',' '{ print $1 $2 $3 $4 }' | sed -En 's/(\S+\s+){2}(\S+).*/\1\2/p'
+# sed -En 's/(\S+\s+){4}(\S+).*/\1\2/p' a.txt
+# sed -En 's/(\S+\s+){6}(\S+).*/\1\2/p' a.txt
+
+top -b -n5 | fgrep "Cpu(s)" | awk -F',' '{ print $1 $2 $3 $4 }' | awk '{print $2" "$3}'
 
 # top -b -n5 > serverstatus
 # cat serverstatus | fgrep "Cpu(s)" | awk -F',' '{ print $1 $2 $3 $4 }' 

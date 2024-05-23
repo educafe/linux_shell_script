@@ -1,12 +1,9 @@
 #!/bin/bash
-function hello {
-	echo "hello world"
-	now
+
+function myadd {
+	echo $[$num1 + $num2]
 }
 
-function now {
-	echo "It is $(date +%r)"
-}
-
-hello
+read -p "Input two numbers to add : " num1 num2
+myadd
 

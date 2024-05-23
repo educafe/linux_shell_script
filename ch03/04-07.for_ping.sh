@@ -22,12 +22,12 @@ for HOST in $@
 do
   	PING_RESULT=$($PING $HOST 2>&1 | egrep "$GREP_PATTERN|unknown host" | cut -d, -f3 | wc -l)
   	[ "$PING_RESULT" -eq 0 ] && {
-		RETURN_CODE=0
-		echo $HOST is up
-	} || {
+			RETURN_CODE=0
+			echo $HOST is up
+		} || {
     	RETURN_CODE=1
     	echo "$HOST is down"
-  }
+		}
 done
 
 return $RETURN_CODE

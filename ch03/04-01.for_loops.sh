@@ -1,25 +1,25 @@
 #!/bin/bash
 
-for i in {1..5}
+for var in {1..10}
 do
-	echo "Looping -- $i"
-	sleep 1
+	echo $var 
 done
 
 echo
-for str in hello world good morning
+for var in hello world good morning
 do	
-	echo $str
+	echo $var
 done
 
 echo
-for str in $@
+for var in "$@"
 do	
-	echo $str
+	echo $var
 done
 
-for str in "$*"
+echo
+for var in "$*"
 do	
-	echo $str
+	echo $var
 done
 

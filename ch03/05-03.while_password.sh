@@ -1,6 +1,6 @@
 #!/bin/bash
-read -p "Enter user name : " uname
-if [ -z $uname ]; then
+read -p "Enter user name : " username
+if [ -z $username ]; then
 	echo "Please input username to login"
 	exit 100;
 fi

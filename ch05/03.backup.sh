@@ -1,49 +1,47 @@
 #!/bin/bash
 # Daily File Backup example
 
-echo "== Daily File Backup =="
+BACKUP_LISTS=backuplist.txt
+BACKUP_DIR=./backup
+BACKUP_FNAME=$(date +%y%m%d).tar.gz
+DEST_FILE=$BACKUP_DIR/$BACKUP_FNAME
 
-CONF_FILE=backuplist
-DEST_DIR=./backup
-FILE=$(date +%y%m%d).tar.gz
-DEST_FILE=$DEST_DIR/$FILE
-
-if [ ! -f $CONF_FILE ]; then
-	echo "$CONF_FILE does not exist!!"
+if [ ! -f $BACKUP_LIST ]; then
+	echo "$BACKUP_LIST does not exist!!"
 	exit 1
 fi
 
 # To check to see if backup directory exists, if not exist make it
-if [ -f $DEST_DIR ]; then
-	echo "$DEST_DIR regular file exist..."
+if [ -f $BACKUP_DIR ]; then
+	echo "$BACKUP_DIR regular file exist..."
 	exit 2
 else
-	if [ -e $DEST_DIR ] && [ -d $DEST_DIR ]; then
-		ls -ld $DEST_DIR
+	if [ -e $BACKUP_DIR ] && [ -d $BACKUP_DIR ]; then
+		ls -ld $BACKUP_DIR
 	else
-		mkdir $DEST_DIR
-		ls -ld $DEST_DIR
+		mkdir $BACKUP_DIR
+		ls -ld $BACKUP_DIR
 	fi
 fi
 
 #To list up file names for backup  
 file_no=0							#start on line-1 of config file
-while read filename <&3
+while read list <&3
 do
-	if [[ "$filename" =~ ^\##*? ]] ; then
+	if [[ "$list" =~ ^\##*? ]] ; then
 #	if [[ ${filename:0:1} = \# ]] ; then
 		continue;
-	elif [ -z "$filename" ]; then
+	elif [ -z "$list" ]; then
 		continue;
 	fi
-	if [ -f "$filename" ] || [ -d "$filename" ]; then
+	if [ -f "$list" ] || [ -d "$list" ]; then
 		# echo $filename
-		filelist+="$filename "
+		filelist+="$list "
 		file_no=$[$file_no + 1]
 	else
 		echo "$filename, does not exist!! but continue to build backup list..."
 	fi
-done 3<$CONF_FILE
+done 3<$BACKUP_LISTS
 
 echo ""; echo "backup file list : "
 for file in $filelist
@@ -54,7 +52,7 @@ done
 # To tar files and compress
 sudo tar -czf $DEST_FILE $filelist 2> err.log
 echo ""; echo "Archving Completed!!"
-echo "Resulting archive backup file : $DEST_FILE"
+echo "Archived backup file : $DEST_FILE"
 ls -l $DEST_FILE
 echo "TOTAL_FILES = $file_no"
 exit 0

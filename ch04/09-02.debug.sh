@@ -1,10 +1,11 @@
-#!/bin/bash
+#!/bin/bash 
 
 echo "This is a demo for shell script debugging"
 pwd
 echo "step ----- 1"
 ls -l /bin/usr
 set -x
+# trap "read" debug
 echo "step ----- 2"
 myadd 30 50
 set +x

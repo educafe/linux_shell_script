@@ -1,9 +1,8 @@
 #!/bin/bash
 # IFS test
 
-list=$(echo $PATH)
 IFS=:
-for var in $list
+for var in $PATH
 do
 	echo "$var"
 done

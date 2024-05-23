@@ -27,5 +27,9 @@ function search-setuid {
 }
 
 read -p "Input directory path to list up files : " pathname
-
-search-setuid $pathname
+if [ $pathname = '/proc' ] || [ $pathname = '/dev' ] || [ $pathname = '/tmp' ] || \
+	[ $pathname = '/run' ] || [ $pathname = '/sys' ]; then
+	echo "No need to search $pathname directory"
+else
+	search-setuid $pathname
+fi

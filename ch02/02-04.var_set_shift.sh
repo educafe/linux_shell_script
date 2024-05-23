@@ -9,4 +9,7 @@ echo "Shift by 2 = $* and \$1 = $1"
 textline="name phone address birthdate salary"
 set $textline
 echo "$*"
+echo "$@"
+printf "%s\n" "$*"
+printf "%s\n" "$@"
 echo '$1 =' $1 'and $4 =' $4''

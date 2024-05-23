@@ -1,0 +1,10 @@
+#/home/educafe/linux_shell_script/ch01
+/home/educafe/linux_shell_script/ch02
+/home/educafe/linux_shell_script/ch03
+/home/educafe/linux_shell_script/ch04
+/home/educafe/linux_shell_script/ch05
+/home/educafe/.bashrc
+
+/home/educafe/.profile
+/etc
+####/usr

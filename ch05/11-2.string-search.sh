@@ -6,18 +6,12 @@ if [ $# -lt 1 ]; then
 	exit
 fi
 
-if [ -f files.$(date +%y%m%d) ]; then
-	rm files.$(date +%y%m%d)
-fi
+find ${1} -type f -name "*" | xargs egrep -l "$2" > files
 
-# find ${1} -type f -name "*" | xargs egrep "$2"
-find ${1} -type f -name "*" | xargs egrep "$2" > files.$(date +%y%m%d)
-
-while read line
+while read file
 do
-	# sed '{s/:/\'\t'/}' <<< ${line}
-	sed '{s/:/\'"  "'/}' <<< ${line}
-done < <(cat files.$(date +%y%m%d))
+	echo "$file  "${2//\\/$'\0'}""
+done < <(cat files)
 
 << Comment
 example of Usage....

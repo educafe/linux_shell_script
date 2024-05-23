@@ -1,6 +1,4 @@
 #!/bin/bash
-IFS=:
-printf "%s\n" $PATH
 
 echo $PATH > file
 IFS=:
@@ -10,8 +8,16 @@ do
 done < file
 
 # IFS=:
-# while read var 
-# do
-	# printf "%s\n" $var
-# done <<< $PATH
+# printf "%s\n" $PATH
 
+# IFS=:
+# echo "$PATH" | while read path
+# do
+	# printf "%s\n" $path
+# done
+
+# IFS=:
+# while read -r path
+# do
+  # printf "%s\n" $path
+# done <<< "$PATH"

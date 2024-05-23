@@ -6,12 +6,7 @@ if [ $# -lt 1 ]; then
 	exit
 fi
 
-find ${1} -type f -name "*" | xargs egrep -l "$2" > files
-
-while read file
-do
-	echo "$file  "${2//\\/$'\0'}""
-done < <(cat files)
+find ${1} -type f -name "*" | xargs egrep -l "$2"
 
 << Comment
 example of Usage....
