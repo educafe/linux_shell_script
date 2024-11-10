@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function list_files {
+list_files() {
 	for f in $1/*; do
 		if [[ -f $f ]]; then
 			echo "$f "

@@ -1,18 +1,19 @@
 #!/bin/bash
 
-function myadd {
-	local result=$[$1 + $2]
+myadd(){
+	result=$[$1 + $2]
 	echo $result
 }
 
-function mysub {
-	echo $[$2 - $1]
+mysub() {
+	result=$[$2 - $1]
+	echo $result
 }
 
 
-read -p "Input two numbers to add : " num1 num2
+read -p "Input two numbers to add and sub : " num1 num2
 myadd $num1 $num2
-echo "RESULT="$result
-
-mysub $num2 $num1
+# echo $result
+mysub $num1 $num2
+# echo $result
 

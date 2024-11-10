@@ -1,9 +1,9 @@
 #!/bin/bash
 
-function myadd {
-	echo $[$num1 + $num2]
+myadd() {
+	result=$[$num1 + $num2]
+	echo $result
 }
 
-read -p "Input two numbers to add : " num1 num2
+num1=10 num2=20
 myadd
-

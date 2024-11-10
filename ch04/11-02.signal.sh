@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function signal_handler {
+signal_handler() {
 	echo "Signal $1 trapped"
 	echo $BASHPID
 }

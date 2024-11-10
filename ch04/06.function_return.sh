@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function myadd {
+myadd() {
 	echo $@ >&2
 	local result=0
 	for var in $@

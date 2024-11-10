@@ -7,17 +7,16 @@ do
 	echo $oldpw, $hostip, $newpw
 	# sshpass -p $oldpw ssh -o StrictHostKeyChecking=no root@$hostip chpasswd <<< "root:$newpw"
 	# sshpass -p $oldpw ssh -o StrictHostKeyChecking=no root@$hostip "echo root:$newpw | chpasswd"
-	# sshpass -p $oldpw ssh root@$hostip chpasswd < <(echo "root:$newpw")
-	# sshpass -p passwd ssh root@$hostip chpasswd < <(echo "educafe:$newpw")
-	sshpass -p $oldpw ssh -o StrictHostKeyChecking=no educafe@$hostip "echo $oldpw | sudo -S bash -c 'echo educafe:$newpw | chpasswd'"
+	# sshpass -p $oldpw ssh -o StrictHostKeyChecking=no root@$hostip chpasswd < <(echo root:$newpw)
+	# sshpass -p $oldpw ssh -o StrictHostKeyChecking=no educafe@$hostip "echo $oldpw | sudo -S bash -c 'echo educafe:$newpw | chpasswd'"
 	# sshpass -p $oldpw ssh educafe@$hostip "echo $oldpw | sudo -S 2> /dev/null bash -c 'chpasswd < <(echo educafe:$newpw)'"
-	
+	sshpass -p $oldpw ssh educafe@$hostip "echo $oldpw | sudo -S 2> /dev/null bash -c 'chpasswd <<< educafe:$newpw'"
 	if [ $? -eq 0 ]; then
 		echo "Password change successful"
 	else
 		echo "Password change failed"
 	fi
-	sleep 2
+	# sleep 2
 done 3< $pwfile
 
 

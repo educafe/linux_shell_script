@@ -1,11 +1,11 @@
 #!/bin/bash
 
-function myadd {
-	local result=$[$1 + $2]
+myadd() {
+	result=$[$1 + $2]
 	echo $result
 }
 
-function mysub {
+ mysub() {
 	echo $[$2 - $1]
 }
 
@@ -16,7 +16,5 @@ if [ $# -lt 2 ]; then
 fi
 
 myadd $1 $2
-echo "RESULT="$result
-
 mysub $2 $1
 

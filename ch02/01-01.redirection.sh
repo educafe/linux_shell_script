@@ -2,7 +2,7 @@
 #stand output redirection
 
 grep educafe /etc/passwd > /dev/null
-ls ~/lab > file01.txt
+ls ~/docker > file01.txt
 
 ls -l /bin/usr 2> err
 

@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-function my_logger() {
+my_logger() {
 	local MESSAGE=$@
 	echo "$MESSAGE"
 	logger -i -t randomly -p user.info "$MESSAGE"	# default priority

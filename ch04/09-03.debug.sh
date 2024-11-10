@@ -1,13 +1,13 @@
 #!/bin/bash 
 
+# trap "echo Press any key to continue; read" ERR
+trap "read" DEBUG
 echo "This is a demo for shell script debugging"
 pwd
 echo "step ----- 1"
 ls -l /bin/usr
-set -x
 echo "step ----- 2"
 myadd 30 50
-set +x
 echo "step ----- 3"
 var=hello
 echo ${var}

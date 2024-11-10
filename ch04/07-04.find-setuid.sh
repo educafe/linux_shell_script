@@ -2,7 +2,7 @@
 # Search for files with setuid 
 shopt -s dotglob			
 
-function search-setuid {
+search-setuid() {
 	for file in $(echo $1/*); do
 		if [ -d $file ]; then
 			if [ $file = '//proc' ]; then

@@ -1,21 +1,34 @@
 #define my functions
 
-function myadd {
-	if [ $# -lt 2 ]; then
-		echo "Usage : $FUNCNAME <num1> <num2> [num3]..." >&2
-		return 100
-	fi 
-	echo $[ $1 + $2 ]
+myadd() {
+	echo $@
+	local result=0
+	for var in $@
+	do
+		result=$[$result + $var]
+	done
+	echo $result
 }
-export -f myadd
-function mysub { echo $[ $1 - $2 ]; }
-mymul() { echo $[ $1 * $2 ]; }
+
+mysub() { echo $[ $1 - $2 ]; }
+
+mymul() { 
+	echo $@ >&2
+	local result=1
+	for var in $@
+	do
+		result=$[$result * $var]
+	done
+	echo $result 
+}
+
 mydiv() {
-	if [ $2 -ne 0 ]
+	if [ $2 -ne 0 ] 
 	then echo $[ $1 / $2 ]
 	else echo "Invalid $2"
 	fi
 }
+export -f myadd
 export -f mysub
 export -f mymul
 export -f mydiv
