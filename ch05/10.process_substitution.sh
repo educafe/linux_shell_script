@@ -8,7 +8,7 @@ if [ -z $1 ]; then
 fi
 
 DISPLAY=true
-path=$1
+filepath=$1
 exec 2> /dev/null
 
 declare -A filestat;
@@ -29,7 +29,7 @@ if $DISPLAY; then
 		echo "PYTHON=$line"
 	fi
 fi
-done < <(find $path -type f -print)
+done < <(find $filepath -type f -print)
 
 echo ============ File types and counts =============
 
