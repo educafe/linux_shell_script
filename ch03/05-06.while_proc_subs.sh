@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# shopt -s lastpipe
+# set +m
 # Process substitution
 PROC_SUBS=true
 echo "Main BashID = " $BASHPID
