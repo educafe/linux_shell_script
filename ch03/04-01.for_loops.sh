@@ -1,25 +1,21 @@
-#!/bin/bash
-
-for var in {1..10}
-do
+for var in {1..5}; do
 	echo $var 
 done
 
-echo
-for var in hello world good morning
-do	
+list="hello world good morning"
+for var in hello $list; do
 	echo $var
 done
 
-echo
-for var in "$@"
-do	
-	echo $var
-done
+# echo
+# for var in "$@"
+# do	
+	# echo $var
+# done
 
-echo
-for var in "$*"
-do	
-	echo $var
-done
+# echo
+# for var in "$*"
+# do	
+	# echo $var
+# done
 

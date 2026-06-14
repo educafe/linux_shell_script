@@ -9,3 +9,4 @@ if [ -e $fname -a -f $fname ]; then
 else
 	echo "$fname not exist or not a regular file"
 fi
+

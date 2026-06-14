@@ -1,16 +1,13 @@
-#!/bin/bash 
-#User input from shell command line
+#!/bin/bash
 
-# if [[ $# < 1 ]]
-if [ $# -lt 1 ]
-then
-	echo "Usage: $(basename $0) <args> <args>"
-	exit 1
-fi
+awk -F: '{print $1}' <<< "hello:world:good:morning"
+awk -F: '{print $2}' <<< "hello:world:good:morning"
+awk -F: '{print $3}' <<< "hello:world:good:morning"
+awk -F: '{print $4}' <<< "hello:world:good:morning"
 
-if false; then
-echo $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11
-else
-echo $1 $2 $3 $4 $5 $6 $7 $8 $9 ${10} ${11}
-fi
+# cut -f1 -d' ' <<< "hello world good morning"
+# cut -f2 -d' ' <<< "hello world good morning"
+# cut -f3 -d' ' <<< "hello world good morning"
+# cut -f4 -d' ' <<< "hello world good morning"
+
 

@@ -1,12 +1,12 @@
 #!/bin/bash
-# here-string
-awk -F: '{print $1}' <<< "hello:world:good:morning"
-awk -F: '{print $2}' <<< "hello:world:good:morning"
-awk -F: '{print $3}' <<< "hello:world:good:morning"
-awk -F: '{print $4}' <<< "hello:world:good:morning"
+# something that looks like array but it is not
+read -p "input 5 numbers : " nums <<< "5 6 7 8 9"
+set $nums		# it is not array variable
+echo $1 $2 $3 $4 $5
 
-cut -f1 -d' ' <<< "hello world good morning"
-cut -f2 -d' ' <<< "hello world good morning"
-cut -f3 -d' ' <<< "hello world good morning"
-cut -f4 -d' ' <<< "hello world good morning"
+# read -p "input numbers : " nums <<< "4:5:6:7:8"
+# IFS=:
+# set $nums
+
+# echo $1 $2 $3 $4 $5
 

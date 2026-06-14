@@ -2,12 +2,6 @@
 #array variable, shell special variable
 
 # Indexed Array variable assignment
-# myarray[0]=1
-# myarray[1]=3
-# myarray[2]=5
-# myarray[3]=9
-# myarray[4]=9
-
 myarray=(1 3 5 7 9)		# indexed array assignment
 
 echo ${!myarray[@]}

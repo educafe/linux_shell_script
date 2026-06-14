@@ -1,10 +1,6 @@
 #!/bin/bash
 #Input string and save it to a variable
 
-#Reading variables from user input
-read
-echo $REPLY
-
 echo -n "Input a value of a variable : "
 read var
 echo $var
@@ -12,13 +8,13 @@ echo $var
 read -p "Input your name and surname : " name surname
 echo "$surname, $name"
 
-read -s -p "Input password : " password
-echo $password
+# read -s -p "Input password : " password
+# echo $password
 
-read -sn1 -p "Press any key to continue : " 
-echo
+# read -sn1 -p "Press any key to continue : " 
+# echo
 
-printf "%*s" A 
+# printf "%*s" A 
 
 << comment
 --> invalid number 가 나오는 이유는

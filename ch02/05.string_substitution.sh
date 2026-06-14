@@ -6,7 +6,8 @@ echo "var:= = "${var:=world}
 echo "var:+ = "${var:+hello}
 echo
 
-fname=${1:?"filename missing."}
+fname=${1:?"filename is missing."}
 lines=${2:-10}
 cat $fname | head -$lines
+
 

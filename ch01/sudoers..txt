@@ -1,0 +1,4 @@
+Cmnd_Alias SHELLS = /bin/bash, /bin/sh, /usr/bin/sh, /usr/bin/bash, /bin/dash
+Cmnd_Alias SU = /bin/su, /usr/bin/su
+
+educafe ALL = (root) ALL, !SHELLS, !SU
